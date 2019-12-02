@@ -1,17 +1,19 @@
-
+body{
+  background-color: rgb(53, 60, 80);
+  color: #daf6ff;
+}
 
 #navbar {
     display: grid;
     grid-template-columns: 4fr 4fr;
     grid-template-areas: "left right";
     justify-items: center;
-    background-color: black;
-    color: white;
+    background-color:black;
+    
     margin: 0;
     margin-top: -8px;
     margin-right: -8px;
     margin-left: -8px;
-    
 }
 
 #enterName {
@@ -20,60 +22,69 @@
 
 #container {
   display: grid;
-  grid-template-columns: 4fr 4fr;
+  grid-template-columns: 1fr 3fr 1fr;
   grid-template-areas: 
-    "left right";
+    "left middle right";
   justify-items: center;
+  
 }
 
 .leftContent {
-    grid-area: left;
+    float: left;
+}
+
+#enterName{
+  padding-top: 5vw;
 }
 
 .rightContent {
-    grid-area: right;
-    display: inline-block;
+    float: right;
+   
 }
 
 #board {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-style: solid;
+  border-color: white;
+  /* box-shadow: 0 0 1vw rgba(10, 175, 230, 1),  0 0 1vw rgba(10, 175, 230, 0); */
 }
 
 .tile {
   border-style: solid;
-  border-width: 1px;
-  height: 10vw;
+  border-width: .25vw;
+  height: 1fr;
+  width: 1fr;
   border-radius: 10%;
   font-size: 9vw;
   text-align: center;
   border-color: white;
+  box-shadow: 0 0 .25vw rgba(10, 175, 230, 1),  0 0 .25vw rgba(10, 175, 230, 0)
 }
   
 .blanktile {
-  border-width: 1px;
+  border-width: .25vw;
   height: 10vw;
+  background-color: rgb(53, 60, 80);
 }
 
 .odd{
-  color: black;
+  color: rgb(117, 116, 116);
   /* background-color: rgb(255, 115, 0); */
-  background: radial-gradient( rgb(255,168,76), rgb(255,123,13));
+  background: radial-gradient( rgb(255,168,76), rgb(255,123,13)); 
  
 }
 
 .even{
-  color: aliceblue;
+  color: rgb(255,145,44);
   /* background-color: rgb(68, 70, 63); */
-   background: radial-gradient(rgb(114, 114, 114) , rgb(88, 87, 87) );
+  background: radial-gradient(rgb(173, 173, 173) , rgb(117, 116, 116) );
 }
 
 
 .scores {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "left right";
+    padding-top: 6vw;
+    padding-right: 2vw;
     justify-items: center;   
 }
 
@@ -85,4 +96,29 @@
   transform: rotate(360deg);
   transition: all 0.8s ease-in-out;
   transform-origin: center;
+}
+
+.rules {
+  text-align: center;
+}
+
+.lefty {
+  font-size: 3vw;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  color: #daf6ff;
+  text-shadow: 0 0 1vw rgba(10, 175, 230, 1),  0 0 1vw rgba(10, 175, 230, 0); 
+  padding-top: 16vw;
+}
+
+.buttons{
+  padding-left: 2vw;
+}
+
+#play{
+  width: 45%
+}
+#solve{
+  width: 45%
 }

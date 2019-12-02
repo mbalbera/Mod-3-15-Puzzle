@@ -19,7 +19,7 @@ let blankTile = board.querySelector('.blanktile');
 enterName.addEventListener("submit", e => {
     e.preventDefault();
     playButton.disabled = false;
-    yourHighScores.className = 'rightContent';
+    yourHighScores.className = '';
     let nameInput = e.target.firstElementChild.value;
     let inputButton = e.target.querySelector("input[type=submit]");
     fetchYourScores(nameInput)
@@ -35,7 +35,6 @@ document.addEventListener("click", e => {
         blankTile = board.querySelector('.blanktile');
         solveButton.disabled = false;
         randomizeBoard();
-        timer();
         board.addEventListener("click", allowMoveTiles);
     } else if (e.target === solveButton){
         clearInterval(currentTime);
@@ -57,7 +56,8 @@ document.addEventListener("click", e => {
 ////////////////////////////////////////////////////////////////////
 
 function allowMoveTiles(event){
-    switchMultipleTiles(event);
+    switchMultipleTiles(event)
+    if (userMoves.length === 1) { timer() };
 }
 
 function hideSignIn(nameInput){
@@ -180,7 +180,7 @@ function checkWin(){
 }
 
 function randomizeBoard(){
-    for (let i = 0; i < 1000 ; i++) {
+    while (allMoves.length < 2500) {
         let direction = Math.floor(Math.random() * 4)
         moveByNumber(direction)
     }
@@ -237,7 +237,8 @@ function solve(moves) {
         }else{
             clearInterval(cycle)
         }
-    }, 500)
+    }, 5)
+    //200
 }
 
 function timer(){

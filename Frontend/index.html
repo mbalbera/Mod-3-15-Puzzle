@@ -21,27 +21,33 @@
         </div>
         <br>
         <div id='container'>
-            <div class="leftContent">
-                <div id="board"></div>
-                <button id="play" type="button" disabled='true'>Play</button>
-                <button id="solve" type="button" disabled='true'>Solve</button>
-            </div>
-            <div class="rightContent">
-                <label>Timer:</label> 
+            <div class= "lefty">
+                <label>Timer:</label>
                 <div id="timer">00:00:00</div>
+                <br><br>
                 <label> Moves</label>
                 <div id="moves">0</div>
+                
+            </div>
+            <div class="middleContent">
                 <div id="rules">
                     <p>
                         Objective:
                         Try to put the numbers in order as fast as you can!
                     </p>
                 </div>
+                <div id="board"></div>
+                <div class="buttons">
+                    <button id="play" type="button" disabled='true'>Play</button>
+                    <button id="solve" type="button" disabled='true'>Solve</button>
+                </div>
+            </div>
+            <div class="rightContent">
                 <div class='scores'>
-                    <div class='leftContent' id='allHighScores'>Highest Scores
+                    <div id='allHighScores'>Highest Scores
                         <ol></ol>
                     </div>
-                    <div class='rightContent hidden' id='yourHighScores'>Your High Scores
+                    <div class='hidden' id='yourHighScores'>Your High Scores
                         <ol></ol>
                     </div>
                 </div>
